@@ -1,5 +1,17 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
+import components from './components/UI'
+import store from './store'
 
-createApp(App).mount('#app')
+let curTheme = 'default'
+
+import(`./themes/${curTheme}/style.scss`)
+
+    const app = createApp(App)
+
+components.forEach(component => {
+    app.component(component.name, component)
+})
+
+app.use(store)
+app.mount('#calculator')

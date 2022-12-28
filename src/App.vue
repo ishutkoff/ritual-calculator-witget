@@ -1,29 +1,35 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="calculator">
+    <div class="calculator__left">
+      <calculator-tabs/>
+    </div>
+    <div class="calculator__right" :class="(getOrderList.length === 0 ? 'calculator__right--empty' : '')">
+      <calculator-form/>
+    </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+<script>
+import CalculatorForm from './components/CalculatotForm.vue'
+import CalculatorTabs from './components/CalculatorTabs.vue'
+import {mapActions, mapGetters, mapMutations} from "vuex";
+
+export default {
+  components: {
+    CalculatorForm,
+    CalculatorTabs
+  },
+  computed:{
+    ...mapGetters(['getOrderList'])
+  },
+  methods: {
+    ...mapMutations(['setShopId']),
+    ...mapActions(['fetchShopData', 'fetchAllCategories']),
+  },
+  async created() {
+    await this.setShopId(localStorage.shopId)
+    await this.fetchShopData()
+    await this.fetchAllCategories()
+  }
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+</script>
