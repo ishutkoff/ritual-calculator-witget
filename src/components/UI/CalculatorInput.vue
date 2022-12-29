@@ -9,20 +9,6 @@ export default {
 </script>
 
 <style lang="scss">
-.calculator-input {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  width: 100%;
-  height: 36px;
-  padding: 0 15px;
-  font-size: 14px;
-  font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
 
-  &::placeholder {
-    color: #000;
-  }
-}
 
 </style>
