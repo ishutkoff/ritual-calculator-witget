@@ -219,7 +219,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="calculator-body">
+		<div
+			v-if="
+				getServicesCategories.length > 0 ||
+				getServicesWithOutCategory.length > 0
+			"
+			class="calculator-body"
+		>
 			<div class="calculator-body-title">Услуги ритуальной службы:</div>
 			<div class="calculator-services-group">
 				<div
