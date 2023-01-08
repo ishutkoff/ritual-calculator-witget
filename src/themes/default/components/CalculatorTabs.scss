@@ -1,11 +1,12 @@
-.calculator{
+.calculator {
 
-  &-tabs{
-    &-wrapper{
+  &-tabs {
+    &-wrapper {
       margin-top: 35px;
       padding-left: 15px;
     }
-    &-item{
+
+    &-item {
       background: $darkGray;
       color: #fff;
       font-size: 24px;
@@ -15,30 +16,48 @@
       column-gap: 10px;
       align-items: center;
       margin-right: 5px;
+      box-sizing: border-box;
       border-radius: 12px 12px 0 0;
       cursor: pointer;
 
-      &--selected{
+      @media (max-width: 768px) {
+        font-size: 18px;
+        height: 48px;
+        padding: 0 20px;
+      }
+
+       @media (max-width: 480px) {
+         font-size: 14px;
+         padding: 4%;
+       }
+
+      svg{
+         @media (max-width: 480px) {
+           height: 24px;
+         }
+      }
+
+      &--selected {
         background: $mainColor;
       }
     }
   }
 
-  &-body{
+  &-body {
     border: 3px solid #4DA8DA;
     border-radius: 12px;
     padding: 20px 4%;
     margin-bottom: 15px;
 
 
-    &-title{
+    &-title {
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 20px;
     }
   }
 
-  &-products-groups{
+  &-products-groups {
 
     &__price-wrapper {
       display: flex;
@@ -54,7 +73,7 @@
       font-size: 17px;
       color: #999;
 
-      span{
+      span {
         color: #000;
         display: inline-block;
       }
@@ -68,24 +87,31 @@
       background-position: right 1px center;
       cursor: pointer;
 
-      &:hover{
+      &:hover {
         filter: opacity(0.5);
       }
     }
-    &__item{
+
+    &__item {
       display: grid;
       grid-template-columns: 230px auto;
       column-gap: 30px;
       margin-bottom: 10px;
+
+       @media (max-width: 768px) {
+         grid-template-columns: 32% auto;
+         column-gap: 20px;
+       }
     }
-    &__image{
+
+    &__image {
       min-height: 40px;
       background-color: #f6f6f6;
       border: 1px solid #ccc;
       border-radius: 6px;
       display: flex;
 
-      &.active{
+      &.active {
         height: 160px;
       }
 
@@ -96,7 +122,7 @@
         margin: auto;
       }
 
-      svg{
+      svg {
         height: auto;
       }
 
@@ -105,15 +131,20 @@
         font-size: 17px;
         color: rgb(153, 153, 153);
         margin: auto;
+
+         @media (max-width: 480px) {
+           font-size: 14px;
+         }
       }
     }
   }
 
-  &-products-without-group{
+  &-products-without-group {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     column-gap: 30px;
     margin-top: 30px;
+
     &__image {
       min-height: 40px;
       background-color: #f6f6f6;
@@ -129,7 +160,7 @@
         margin: auto;
       }
 
-      svg{
+      svg {
         height: auto;
       }
     }
@@ -138,37 +169,44 @@
       font-size: 17px;
       color: #999;
 
-      span{
+      span {
         color: #000;
         display: inline-block;
       }
     }
 
-    &__item{
+    &__item {
       display: grid;
       grid-template-columns: 230px auto;
       margin-bottom: 10px;
       column-gap: 46px;
       align-items: center;
+
+       @media (max-width: 768px) {
+         grid-template-columns: 32% auto;
+       }
     }
-    .calculator-checkbox{
+
+    .calculator-checkbox {
       margin-left: -35px;
     }
   }
 
-  &-services-group{
+  &-services-group {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     column-gap: 30px;
+
     &__item {
       margin-bottom: 10px;
     }
   }
 
-  &-services-without-group{
+  &-services-without-group {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     column-gap: 30px;
+
     &__item {
       margin-bottom: 10px;
     }
@@ -185,10 +223,15 @@
     position: sticky;
     top: 30px;
 
-    &--empty{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+     @media (max-width: 1024px) {
+       margin-top: 40px !important;
+       min-height: auto !important;
+     }
+
+    &--empty {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   }
 
