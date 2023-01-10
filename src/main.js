@@ -4,10 +4,8 @@ import components from './components/UI'
 import store from './store'
 import { vMaska } from 'maska'
 
-let curTheme = 'default'
-
-import(`./themes/${curTheme}/style.scss`)
-
+let themeName = import.meta.env.VITE_THEME_NAME
+import(`./themes/${themeName}.scss` /* @vite-ignore */)
 const app = createApp(App)
 
 components.forEach(component => {

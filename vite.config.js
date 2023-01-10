@@ -7,13 +7,9 @@ export default defineConfig({
 	build: {
 		rollupOptions: {
 			output: {
-				manualChunks: false,
-				inlineDynamicImports: true,
-				entryFileNames: '[name].js', // currently does not work for the legacy bundle
-				assetFileNames: '[name].[ext]', // currently does not work for images
-				// entryFileNames: `assets/[name].js`,
-				// chunkFileNames: `assets/[name].js`,
-				// assetFileNames: `assets/[name].[ext]`,
+				entryFileNames: `assets/[name].js`,
+				chunkFileNames: `assets/[name].js`,
+				assetFileNames: `assets/[name].[ext]`,
 			},
 		},
 	},

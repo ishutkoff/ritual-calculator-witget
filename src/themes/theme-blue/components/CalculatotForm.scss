@@ -59,6 +59,10 @@
 		margin-bottom: 5px;
 		padding-bottom: 5px;
 		border-bottom: 1px solid #e1d9d9;
+
+		&:last-child {
+			border: none;
+		}
 	}
 	&__del-btn {
 		font-size: 14px;

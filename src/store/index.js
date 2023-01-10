@@ -115,6 +115,10 @@ export default createStore({
 			return state.productsList.find(product => product._id === productId)
 		},
 		getOrderList(state) {
+			if (state.serviceType === BURIAL)
+				return state.orderList.filter(item => item && item.burial === true)
+			if (state.serviceType === CREMATION)
+				return state.orderList.filter(item => item && item.cremation === true)
 			return state.orderList.filter(item => item)
 		},
 		getSum(state, getters) {

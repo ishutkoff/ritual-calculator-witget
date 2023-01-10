@@ -1,0 +1,83 @@
+.calculator-form {
+	background-color: #fff;
+	padding: 20px;
+	font-size: 16px;
+	order: 1;
+
+	&__note {
+		font-size: 14px;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+
+	&__accept {
+		font-size: 12px;
+		margin-bottom: 10px;
+	}
+
+	&__wrapper {
+	}
+
+	&__list-empty {
+		color: #666;
+		font-size: 19px;
+		padding: 0 10%;
+		text-align: center;
+	}
+
+	&__title {
+		display: flex;
+		font-size: 19px;
+		font-weight: 700;
+		column-gap: 10px;
+		align-items: center;
+		justify-content: space-between;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+		border-bottom: 1px solid #ccc;
+
+		span {
+			flex-shrink: 0;
+			font-size: 24px;
+		}
+	}
+
+	&__subtitle {
+		font-size: 19px;
+		font-weight: 700;
+		margin-bottom: 10px;
+	}
+	&__items {
+		width: 100%;
+		border-bottom: 1px solid #ccc;
+		margin-bottom: 15px;
+	}
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		font-size: 17px;
+		margin-bottom: 5px;
+		padding-bottom: 5px;
+		border-bottom: 1px solid #e1d9d9;
+
+		&:last-child {
+			border: none;
+		}
+	}
+	&__del-btn {
+		font-size: 14px;
+		padding-right: 25px;
+		background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='m6 7.41-4.3 4.3-1.4-1.42L4.58 6 .29 1.7 1.71.3 6 4.58l4.3-4.3 1.4 1.42L7.42 6l4.3 4.3-1.42 1.4L6 7.42Z' fill='%23000'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 1px center;
+		cursor: pointer;
+	}
+
+	&__product div:first-child {
+		margin-bottom: 8px;
+	}
+
+	&__input {
+		margin-bottom: 10px;
+	}
+}

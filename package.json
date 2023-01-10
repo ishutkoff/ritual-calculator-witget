@@ -4,7 +4,8 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
+		"dev-theme-blue": "vite --mode theme-blue",
+		"dev-theme-red": "vite --mode theme-red",
 		"build": "vite build",
 		"preview": "vite preview"
 	},
