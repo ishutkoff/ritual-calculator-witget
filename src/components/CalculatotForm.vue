@@ -6,7 +6,7 @@
 		Выберите услуги и мы расчитаем стоимость
 	</p>
 	<div class="success-message" v-if="$store.state.successSend">
-		<h2>Ваша заявка отправлена.</h2>
+		<div class="calculator-form__title">Ваша заявка отправлена.</div>
 		<p>Наши менеджеры свяжутся с Вами в ближайшее время</p>
 	</div>
 
