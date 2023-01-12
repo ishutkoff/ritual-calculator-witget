@@ -11,6 +11,11 @@ export default createStore({
 			servicesList: [],
 			categoriesList: [],
 			orderList: [],
+			userData: {
+				name: '',
+				phone: '',
+			},
+			successSend: false,
 		}
 	},
 
@@ -30,6 +35,29 @@ export default createStore({
 			const categories = await res.data
 			commit('pushCategories', categories)
 		},
+		async sendShopCart({ commit, state }) {
+			const res = await axios.post(
+				`${import.meta.env.VITE_URL}/send-data/`,
+				{
+					shopId: state.shopId,
+					...state.userData,
+					orderList: this.getters['getOrderList'],
+				},
+				{
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				}
+			)
+			await res.data
+			commit('setSuccessSend', true)
+			commit('updatePhone', '')
+			commit('updateName', '')
+			commit('clearOrderList')
+			setTimeout(() => {
+				commit('setSuccessSend', false)
+			}, 3000)
+		},
 	},
 	mutations: {
 		setType(state, type) {
@@ -38,6 +66,9 @@ export default createStore({
 		},
 		setProducts(state, products) {
 			state.productsList = products
+		},
+		setSuccessSend(state, value) {
+			state.successSend = value
 		},
 		setServices(state, services) {
 			this.state.servicesList = services
@@ -62,6 +93,15 @@ export default createStore({
 			} else if (item.type === SERVICE) {
 				state.orderList[item.index] = this.getters.getServiceById(item._id)
 			}
+		},
+		updatePhone(state, value) {
+			state.userData.phone = value
+		},
+		updateName(state, value) {
+			state.userData.name = value
+		},
+		clearOrderList(state) {
+			state.orderList = []
 		},
 	},
 	getters: {
