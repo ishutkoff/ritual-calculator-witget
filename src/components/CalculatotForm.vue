@@ -23,7 +23,10 @@
 			<div v-for="item of getOrderList" class="calculator-form__item">
 				<div class="calculator-form__product">
 					<div>{{ item.title }}</div>
-					<div>{{ item.price.toLocaleString('ru') }} ₽</div>
+					<div v-if="item.price > 0">
+						{{ item.price.toLocaleString('ru') }} ₽
+					</div>
+					<div v-else>Бесплатно</div>
 				</div>
 				<div
 					@click="removeFromOrder(item._id)"
