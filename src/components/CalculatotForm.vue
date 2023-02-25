@@ -3,7 +3,7 @@
 		v-if="getOrderList.length === 0 && !$store.state.successSend"
 		class="calculator-form__list-empty"
 	>
-		Выберите услуги и мы расчитаем стоимость
+		Выберите услуги и мы рассчитаем стоимость
 	</p>
 	<div class="success-message" v-if="$store.state.successSend">
 		<div class="calculator-form__title">Ваша заявка отправлена.</div>

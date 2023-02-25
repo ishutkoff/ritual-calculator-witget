@@ -22,7 +22,7 @@ export default createStore({
 	actions: {
 		async fetchShopData({ commit, state }) {
 			const res = await axios.get(
-				`${import.meta.env.VITE_URL}/shops/${state.shopId}`
+				`${import.meta.env.VITE_URL}/shops/calculator/${state.shopId}`
 			)
 			const shop = await res.data
 			commit('setProducts', shop.products)
