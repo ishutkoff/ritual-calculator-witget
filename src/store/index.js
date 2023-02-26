@@ -37,7 +37,7 @@ export default createStore({
 		},
 		async sendShopCart({ commit, state }) {
 			const res = await axios.post(
-				`${import.meta.env.VITE_URL}/send-data/`,
+				`${import.meta.env.VITE_URL}/send-data/calculator/`,
 				{
 					shopId: state.shopId,
 					...state.userData,
