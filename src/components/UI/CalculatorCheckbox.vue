@@ -1,13 +1,7 @@
 <template>
 	<label style="font-size: 17px">
-		<input
-			:checked="this.inOrder(this.item._id)"
-			:value="item._id"
-			@change="selectItem($event)"
-			type="checkbox"
-			class="calculator-checkbox"
-			ref="checkbox"
-		/>
+		<input :checked="this.inOrder(this.item._id)" :value="item._id" @change="selectItem($event)" type="checkbox"
+			class="calculator-checkbox main-color" ref="checkbox" />
 		{{ item.title }}
 	</label>
 </template>

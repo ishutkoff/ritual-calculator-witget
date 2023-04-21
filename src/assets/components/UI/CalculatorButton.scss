@@ -1,20 +1,23 @@
 .calculator-button{
-  background: $mainColor;
   color: #fff;
   border: none;
   border-radius: 6px;
   width: 100%;
+  opacity: 0.9;
   height: 42px;
   font-size: 19px;
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
 
   &:hover{
-    background: $mainColorDark;
+    opacity: 1;
   }
 
   &:disabled{
-    background: $mainColorLight;
+   opacity: 0.5;
     cursor: default;
+     &:hover{
+     opacity: 0.5;
+  }
   }
 }

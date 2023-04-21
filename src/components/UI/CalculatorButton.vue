@@ -1,5 +1,7 @@
 <template>
-<button class="calculator-button"><slot/></button>
+  <button class="calculator-button main-color-bg">
+    <slot />
+  </button>
 </template>
 
 <script>

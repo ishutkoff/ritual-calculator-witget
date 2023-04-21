@@ -1,10 +1,9 @@
-@import 'theme-blue/variables';
-@import 'theme-blue/components/UI/CalculatorButton';
-@import 'theme-blue/components/UI/CalculatorCheckbox';
-@import 'theme-blue/components/UI/CalculatorInput';
-@import 'theme-blue/components/UI/CalculatorSelect';
-@import 'theme-blue/components/CalculatorTabs';
-@import 'theme-blue/components/CalculatotForm';
+@import 'components/UI/CalculatorButton';
+@import 'components/UI/CalculatorCheckbox';
+@import 'components/UI/CalculatorInput';
+@import 'components/UI/CalculatorSelect';
+@import 'components/CalculatorTabs';
+@import 'components/CalculatotForm';
 
 .calculator {
 	font-family: 'Roboto', sans-serif;

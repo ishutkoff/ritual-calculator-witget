@@ -13,9 +13,17 @@
   vertical-align: bottom;
 
   &:checked {
-    background-image: linear-gradient(to bottom, $mainColorDark, $mainColorDark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, #fff, #fff);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 14px 14px;
+
+    &::after{
+      content: "▪";
+    font-size: 44px;
+    }
   }
 }
